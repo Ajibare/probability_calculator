@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Ajibare Babajide Blessing">
+    <meta name="description" content="The Advanced Probability Calculator is a web-based tool that helps users easily calculate different types of probabilities including simple/compound probabilities, combined (AND/OR) probabilities, and binomial distribution. It provides users with step-by-step descriptions of each calculation type and dynamically visualizes the results using graphical representations (charts). The tool is designed for both educational and professional purposes, offering an intuitive interface and detailed explanations to support users' understanding of probability theory.">
+    <title>Probability Calculator with Chart</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<!-- 
+    The Advanced Probability Calculator is a web-based tool that helps users easily calculate different types of probabilities including simple/compound probabilities, combined (AND/OR) probabilities, and binomial distribution. It provides users with step-by-step descriptions of each calculation type and dynamically visualizes the results using graphical representations (charts). The tool is designed for both educational and professional purposes, offering an intuitive interface and detailed explanations to support users' understanding of probability theory. -->
+
+    <div class="container">
+        <h1>Advanced Probability Calculator</h1>
+
+        <label for="probabilityType">Select Probability Type:</label>
+        <select id="probabilityType" onchange="toggleInputFields()">
+            <option value="">-- Select Type --</option>
+            <option value="simple">Simple/Compound Probability</option>
+            <option value="combined">Combined Probability (AND/OR)</option>
+            <option value="binomial">Binomial Distribution</option>
+        </select>
+
+        <div id="simpleCompoundFields" style="display: none;">
+            <label for="favorable">Favorable Outcomes:</label>
+            <input type="number" id="favorable" min="0">
+            <label for="total">Total Outcomes:</label>
+            <input type="number" id="total" min="0">
+        </div>
+
+        <div id="combinedFields" style="display: none;">
+            <label for="eventAnd">Probability of A AND B:</label>
+            <input type="number" id="eventAnd" step="0.01" min="0" max="1">
+            <label for="eventOr">Probability of A OR B:</label>
+            <input type="number" id="eventOr" step="0.01" min="0" max="1">
+        </div>
+
+        <div id="binomialFields" style="display: none;">
+            <label for="successProbability">Success Probability:</label>
+            <input type="number" id="successProbability" step="0.01" min="0" max="1">
+            <label for="trials">Number of Trials:</label>
+            <input type="number" id="trials" min="1">
+        </div>
+
+        <button onclick="calculateProbability()">Calculate Probability</button>
+        <button onclick="resetForm()">Reset</button>
+
+        <div id="result"></div>
+
+        <h2>Calculation History</h2>
+        <div id="history"></div>
+
+        <h2>Graphical Representation</h2>
+        <canvas id="probabilityChart" width="200" height="100"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+
+
+    <!-- Target Audience:
+Students and Educators: This tool is valuable for students learning probability in mathematics, statistics, or science courses, as well as for teachers who want to demonstrate probability concepts with interactive visual aids.
+
+Data Analysts and Statisticians: Professionals working with probability models, data analysis, or statistical research will benefit from the tool’s fast calculation features and visual outputs for decision-making.
+
+Developers and Data Science Enthusiasts: Programmers or enthusiasts who want to explore probability calculations in their projects will find this tool useful for quick and accurate results.
+
+Financial and Risk Analysts: Financial experts calculating risks based on probabilities for investments, portfolios, or insurance purposes will appreciate the combined and binomial probability features. -->
+
+<!-- 
+Market Value:
+Educational Market:
+
+The calculator can serve as a supplemental tool for schools, colleges, and universities. Probability is a fundamental topic in mathematics and statistics courses, and visual calculators enhance learning.
+Estimated market potential: $2 billion globally for online educational tools and resources.
+Professional Software Market:
+
+The demand for accessible statistical tools is growing in various industries including finance, data science, risk management, and research. As more professionals seek online tools for real-time calculations, there is a significant market for products offering quick and reliable calculations with visualization capabilities.
+Estimated market potential: $500 million annually in the data analysis and financial sectors.
+Freemium Model Opportunity:
+
+By offering the basic version of the calculator for free with advanced features behind a paywall, you can monetize through subscriptions or one-time purchases.
+Potential average revenue per user: $5-$10 per month for premium features.
+-->
+</body>
+</html>
